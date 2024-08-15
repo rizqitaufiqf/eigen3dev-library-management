@@ -14,4 +14,4 @@ normalizePort = (val) => {
   return false;
 };
 
-module.exports = normalizePort;
+module.exports = { normalizePort };

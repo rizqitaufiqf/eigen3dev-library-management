@@ -1,7 +1,7 @@
 require("dotenv").config();
 const app = require("./app");
 const mongoose = require("mongoose");
-const normalizePort = require("./shared/utils/normalize-port");
+const { normalizePort } = require("./utils");
 
 const PORT = normalizePort(process.env.PORT || 3000);
 
