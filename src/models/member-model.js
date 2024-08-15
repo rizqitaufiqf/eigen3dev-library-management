@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const MemberSchema = new Schema(
   {
-    code: String,
+    code: {
+      type: String,
+      unique: true,
+    },
     name: String,
     isPenalized: { type: Boolean, default: false },
     penalizeUntil: Date,

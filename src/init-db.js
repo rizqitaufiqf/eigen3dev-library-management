@@ -1,8 +1,8 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const Book = require("./models/book");
+const Book = require("./models/book-model");
+const Member = require("./models/member-model");
 const { initBooks, initMembers } = require("./utils/constants");
-const Member = require("./models/Member");
 
 const initDB = async () => {
   await mongoose.connect(process.env.MONGO_URI);
