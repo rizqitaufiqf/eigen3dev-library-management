@@ -1,0 +1,9 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: book-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: book
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports:
+      - "27017:27017"
