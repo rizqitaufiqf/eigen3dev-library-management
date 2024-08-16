@@ -31,6 +31,31 @@ class BookService {
 
     return book;
   }
+
+  async returnBook(member, bookCode) {
+    const book = await bookRepository.findByCode(bookCode);
+    const isValidBorrowedBooks = member.borrowedBooks.find((item) => item._id.equals(book._id));
+    if (!book || isValidBorrowedBooks === undefined) {
+      throw new Error("Member has not borrowed this book.");
+    }
+
+    const now = new Date();
+    const borrowedDate = new Date(book.borrowedDate);
+    const diffDays = (now - borrowedDate) / (1000 * 60 * 60 * 24);
+
+    if (diffDays > 7) {
+      member.penaltyUntil = new Date(now.setDate(now.getDate() + 3));
+    }
+
+    member.borrowedBooks.pull(book);
+    book.borrowedBy = null;
+    book.borrowedDate = null;
+    book.stock += 1;
+
+    await Promise.all([book.save(), member.save()]);
+
+    return book;
+  }
 }
 
 module.exports = new BookService();
