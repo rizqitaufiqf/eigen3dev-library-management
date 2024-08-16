@@ -5,8 +5,8 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const bookRoutes = require("./routes/book-routes");
-const memberRoutes = require("./routes/member-routes");
+const bookRoutes = require("./routes/book.routes");
+const memberRoutes = require("./routes/member.routes");
 
 const app = express();
 

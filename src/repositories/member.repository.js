@@ -1,4 +1,4 @@
-const Member = require("../models/member-model");
+const Member = require("../models/member.model");
 
 class MemberRepository {
   async findAll() {

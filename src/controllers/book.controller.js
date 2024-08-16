@@ -1,5 +1,5 @@
-const bookService = require("../services/book-service");
-const memberService = require("../services/member-service");
+const bookService = require("../services/book.service");
+const memberService = require("../services/member.service");
 
 const findAll = async (req, res) => {
   try {

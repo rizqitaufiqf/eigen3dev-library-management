@@ -1,4 +1,4 @@
-const bookRepository = require("../repositories/book-repository");
+const bookRepository = require("../repositories/book.repository");
 
 class BookService {
   async findAll() {
