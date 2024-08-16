@@ -36,7 +36,9 @@ describe("Member Service", () => {
 
   it("should penalize a member", async () => {
     const memberCode = "M001";
-    const penalizeUntil = "19-09-2024";
+    const penalizeUntil = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)
+      .toLocaleDateString("en-GB")
+      .replace(/\//g, "-");
     const member = await MemberService.setPenalize(memberCode, penalizeUntil);
     expect(member.penaltyUntil).not.toEqual(null);
   });

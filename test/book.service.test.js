@@ -80,4 +80,14 @@ describe("Book Service", () => {
     const borrowedBook = await BookService.returnBook(member, bookCode);
     expect(borrowedBook.borrowedBy).toEqual(null);
   });
+
+  it("should not return a book that member not borrowed", async () => {
+    const memberCode = "M001";
+    const bookCode = "SHR-1";
+
+    const member = await MemberService.findByCode(memberCode);
+    await expect(BookService.returnBook(member, bookCode)).rejects.toThrow(
+      "Member has not borrowed this book."
+    );
+  });
 });
