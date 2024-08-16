@@ -2,11 +2,11 @@ const Member = require("../models/member-model");
 
 class MemberRepository {
   async findAll() {
-    return Member.find({}, "-__v -_id");
+    return Member.find().populate("borrowedBooks");
   }
 
   async findByCode(code) {
-    return Member.findOne({ code }, "-__v -_id");
+    return Member.findOne({ code }).populate("borrowedBooks");
   }
 }
 
