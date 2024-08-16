@@ -16,7 +16,7 @@ const findByCode = async (req, res) => {
     if (book) {
       res.status(200).json(book);
     } else {
-      res.status(404).json({ error: "Book not found" });
+      res.status(404).json({ message: "Book not found." });
     }
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -42,7 +42,7 @@ const borrowBook = async (req, res) => {
 const returnBook = async (req, res) => {
   try {
     const member = await memberService.findByCode(req.params.memberCode);
-    if (!member) throw new Error("Member not found");
+    if (!member) throw new Error("Member not found.");
 
     const book = await bookService.returnBook(member, req.body.bookCode);
     res.status(200).json({ message: "Book returned successfully.", data: book });

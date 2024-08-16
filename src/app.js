@@ -3,7 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const mongoose = require("mongoose");
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUiExpress = require("swagger-ui-express");
 
 const bookRoutes = require("./routes/book.routes");
 const memberRoutes = require("./routes/member.routes");
@@ -14,6 +15,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(logger("dev"));
 app.use(cookieParser());
+
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Library Management API",
+      version: "1.0.0",
+    },
+  },
+  apis: ["./src/routes/book.routes.js", "./src/routes/member.routes.js"],
+};
+const swagger = swaggerJsdoc(swaggerOptions);
+app.use("/docs", swaggerUiExpress.serve, swaggerUiExpress.setup(swagger));
 
 app.use("/books", bookRoutes);
 app.use("/members", memberRoutes);

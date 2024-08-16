@@ -16,7 +16,7 @@ const findByCode = async (req, res) => {
     if (member) {
       res.status(200).json(member);
     } else {
-      res.status(404).json({ error: "Member not found" });
+      res.status(404).json({ error: "Member not found." });
     }
   } catch (err) {
     res.status(500).json({ error: err.message });
