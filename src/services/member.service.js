@@ -14,8 +14,7 @@ class Member {
     const penaltyDate = new Date(year, month - 1, day);
     penaltyDate.setHours(23, 59, 59, 999);
 
-    const member = await memberRepository.setPenalize(memberCode, penaltyDate);
-    return member;
+    return memberRepository.setPenalize(memberCode, penaltyDate);
   }
 }
 

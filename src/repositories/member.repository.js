@@ -9,8 +9,8 @@ class MemberRepository {
     return Member.findOne({ code }).populate("borrowedBooks");
   }
 
-  async setPenalize(memberCode, penaltyUntil) {
-    return Member.findOneAndUpdate({ code: memberCode }, { penaltyUntil });
+  async setPenalize(code, penaltyUntil) {
+    return Member.findOneAndUpdate({ code }, { penaltyUntil }, { new: true, runValidators: true });
   }
 }
 
