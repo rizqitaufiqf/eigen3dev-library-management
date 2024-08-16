@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 const { MongoMemoryServer } = require("mongodb-memory-server");
-const BookService = require("../src/services/book.service");
 const MemberService = require("../src/services/member.service");
-const BookRepository = require("../src/repositories/book.repository");
-const MemberRepository = require("../src/repositories/member.repository");
 
 const Book = require("../src/models/book.model");
 const Member = require("../src/models/member.model");
@@ -15,6 +12,7 @@ beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();
   const uri = mongoServer.getUri();
   await mongoose.connect(uri);
+
   await Book.insertMany(initBooks);
   await Member.insertMany(initMembers);
 });
@@ -34,5 +32,12 @@ describe("Member Service", () => {
     const memberCode = "M001";
     const member = await MemberService.findByCode(memberCode);
     expect(member).toHaveProperty("code", "M001");
+  });
+
+  it("should penalize a member", async () => {
+    const memberCode = "M001";
+    const penalizeUntil = "19-09-2024";
+    const member = await MemberService.setPenalize(memberCode, penalizeUntil);
+    expect(member.penaltyUntil).not.toEqual(null);
   });
 });

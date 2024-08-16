@@ -36,15 +36,9 @@ importers:
         specifier: ^3.14.2
         version: 3.14.2
     devDependencies:
-      '@shelf/jest-mongodb':
-        specifier: ^4.3.2
-        version: 4.3.2(jest-environment-node@29.7.0)(mongodb@6.7.0(socks@2.8.3))
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@22.3.0)
-      jest-express:
-        specifier: ^1.12.0
-        version: 1.12.0
       mongodb-memory-server:
         specifier: ^10.0.0
         version: 10.0.0(socks@2.8.3)
@@ -350,13 +344,6 @@ packages:
   '@mongodb-js/saslprep@1.1.8':
     resolution: {integrity: sha512-qKwC/M/nNNaKUBMQ0nuzm47b7ZYWQHN3pcXq4IIcoSBc2hOIrflAxJduIvvqmhoz3gR2TacTAs8vlsCVPkiEdQ==}
 
-  '@shelf/jest-mongodb@4.3.2':
-    resolution: {integrity: sha512-LL7NBaT04sJspoOZXqw3HGLw0+XnZNlIV72x2ymzyuloqIKXwgUl8eL1XKDUh4Ud8dUBRMrOngCQBcHKjWnrHQ==}
-    engines: {node: '>=16'}
-    peerDependencies:
-      jest-environment-node: 28.x || 29.x
-      mongodb: 3.x.x || 4.x || 5.x || 6.x
-
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
 
@@ -420,9 +407,6 @@ packages:
   '@types/whatwg-url@11.0.5':
     resolution: {integrity: sha512-coYR071JRaHa+xoEvvYqvnIHaVqaYrLPbsufM9BF63HkwI5Lgmy2QR8Q5K/lYDYo5AK82wOvSOS0UsLTpTG7uQ==}
 
-  '@types/whatwg-url@8.2.2':
-    resolution: {integrity: sha512-FtQu10RWgn3D9U4aazdwIE2yzphmTJREDqNdODHrbrZmmMqI0vMheC/6NE/J1Yveaj8H+ela+YwWTjq5PGmuhA==}
-
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
@@ -472,9 +456,6 @@ packages:
 
   asap@2.0.6:
     resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
-
-  async-mutex@0.4.1:
-    resolution: {integrity: sha512-WfoBo4E/TbCX1G95XTjbWTE3X2XLG0m1Xbv2cwOtuPdyH9CZvnaA5nCt1ucjaKEgW2A5IF71hxrRhr83Je5xjA==}
 
   async-mutex@0.5.0:
     resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
@@ -545,10 +526,6 @@ packages:
 
   bser@2.1.1:
     resolution: {integrity: sha512-gQxTNE/GAfIIrmHLUE3oJyp5FO6HRBfhjnw4/wMmA63ZGDJnWBmgY/lyQBpnDUkGmAhbSe39tx2d/iTOAfglwQ==}
-
-  bson@5.5.1:
-    resolution: {integrity: sha512-ix0EwukN2EpC0SRWIj/7B5+A6uQMQy6KMREI9qQqvgpkV2frH63T0UDVd1SYedL6dNCmDBYB3QtXi4ISk9YT+g==}
-    engines: {node: '>=14.20.1'}
 
   bson@6.8.0:
     resolution: {integrity: sha512-iOJg8pr7wq2tg/zSlCCHMi3hMm5JTOxLTagf3zxhcenHsFp+c6uOs6K7W5UE7A4QIJGtqh/ZovFNMP4mOPJynQ==}
@@ -703,15 +680,6 @@ packages:
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
-  debug@4.3.4:
-    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
-    engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
     peerDependenciesMeta:
@@ -1148,9 +1116,6 @@ packages:
     resolution: {integrity: sha512-DOSwCRqXirTOyheM+4d5YZOrWcdu0LNZ87ewUoywbcb2XR4wKgqiG8vNeYwhjFMbEkfju7wx2GYH0P2gevGvFw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
-  jest-express@1.12.0:
-    resolution: {integrity: sha512-HVpmEtVLHgT/Wh2bGy3Fy6mXdoS0Clj7d4/cFnptw2JkCVepC3FOiboavqLYZv4x2oytpWgOqikhVr84f9CwZw==}
-
   jest-get-type@29.6.3:
     resolution: {integrity: sha512-zrteXnqYxfQh7l5FHyL38jL39di8H8rHoecLH3JNxH3BwOrBsNeabdap5e0I23lD4HHI8W5VFBZqG4Eaq5LNcw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -1174,9 +1139,6 @@ packages:
   jest-mock@29.7.0:
     resolution: {integrity: sha512-ITOMZn+UkYS4ZFh83xYAOzWStloNzJFO2s8DWrE4lhtGD+AorgnbkiKERe4wQVBydIGPx059g6riW5Btp6Llnw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-
-  jest-node-http@1.0.0:
-    resolution: {integrity: sha512-WcO1nqqkgwZ4sHAJ90YGqOiFYFkDm9eP8HsBwadedlJaF2T5JHM1BmnpskHDDlB3B4JzRl6CJgOpSOAOwoRfhQ==}
 
   jest-pnp-resolver@1.2.3:
     resolution: {integrity: sha512-+3NpwQEnRoIBtx4fyhblQDPgJI0H1IEIkX7ShLUjPGA7TtUTvI1oiKi3SR4oBR0hQhQR80l4WAe5RrXBwWMA8w==}
@@ -1362,9 +1324,6 @@ packages:
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
-  mongodb-connection-string-url@2.6.0:
-    resolution: {integrity: sha512-WvTZlI9ab0QYtTYnuMLgobULWhokRjtC7db9LtcVfJ+Hsnyr5eo6ZtNAt3Ly24XZScGMelOcGtm7lSn0332tPQ==}
-
   mongodb-connection-string-url@3.0.1:
     resolution: {integrity: sha512-XqMGwRX0Lgn05TDB4PyG2h2kKO/FfWJyCzYQbIhXUxz7ETt0I/FqHjUeqj37irJ+Dl1ZtU82uYyj14u2XsZKfg==}
 
@@ -1372,38 +1331,9 @@ packages:
     resolution: {integrity: sha512-AdYi4nVqe3Pk95fRJ+DegbDdEfAG9wujNsVvJWbwh8+ZJd+d3JJK1PHxRyJ9rMvoczvlli5M30eMig7zBuF5pQ==}
     engines: {node: '>=16.20.1'}
 
-  mongodb-memory-server-core@9.2.0:
-    resolution: {integrity: sha512-9SWZEy+dGj5Fvm5RY/mtqHZKS64o4heDwReD4SsfR7+uNgtYo+JN41kPCcJeIH3aJf04j25i5Dia2s52KmsMPA==}
-    engines: {node: '>=14.20.1'}
-
   mongodb-memory-server@10.0.0:
     resolution: {integrity: sha512-7Geo/s4lst/QHw+N8/stdnyb08xn68O0zbSee62jgoPfWOXfSPhX9a8OvyOY/o23oYk9ra2EpA2Oejenb3JKfw==}
     engines: {node: '>=16.20.1'}
-
-  mongodb-memory-server@9.2.0:
-    resolution: {integrity: sha512-w/usKdYtby5EALERxmA0+et+D0brP0InH3a26shNDgGefXA61hgl6U0P3IfwqZlEGRZdkbZig3n57AHZgDiwvg==}
-    engines: {node: '>=14.20.1'}
-
-  mongodb@5.9.2:
-    resolution: {integrity: sha512-H60HecKO4Bc+7dhOv4sJlgvenK4fQNqqUIlXxZYQNbfEWSALGAwGoyJd/0Qwk4TttFXUOHJ2ZJQe/52ScaUwtQ==}
-    engines: {node: '>=14.20.1'}
-    peerDependencies:
-      '@aws-sdk/credential-providers': ^3.188.0
-      '@mongodb-js/zstd': ^1.0.0
-      kerberos: ^1.0.0 || ^2.0.0
-      mongodb-client-encryption: '>=2.3.0 <3'
-      snappy: ^7.2.2
-    peerDependenciesMeta:
-      '@aws-sdk/credential-providers':
-        optional: true
-      '@mongodb-js/zstd':
-        optional: true
-      kerberos:
-        optional: true
-      mongodb-client-encryption:
-        optional: true
-      snappy:
-        optional: true
 
   mongodb@6.7.0:
     resolution: {integrity: sha512-TMKyHdtMcO0fYBNORiYdmM25ijsHs+Njs963r4Tro4OQZzqYigAzYQouwWRg4OIaiLRUEGUh/1UAcH5lxdSLIA==}
@@ -1861,10 +1791,6 @@ packages:
     resolution: {integrity: sha512-r0eojU4bI8MnHr8c5bNo7lJDdI2qXlWWJk6a9EAFG7vbhTjElYhBVS3/miuE0uOuoLdb8Mc/rVfsmm6eo5o9GA==}
     hasBin: true
 
-  tr46@3.0.0:
-    resolution: {integrity: sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA==}
-    engines: {node: '>=12'}
-
   tr46@4.1.1:
     resolution: {integrity: sha512-2lv/66T7e5yNyhAAC4NaKe5nVavzuGJQVVtRYLyQ2OI8tsJ61PMLlelehb0wi2Hx6+hT/OJUWZcw8MjlSRnxvw==}
     engines: {node: '>=14'}
@@ -1932,10 +1858,6 @@ packages:
 
   webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
-    engines: {node: '>=12'}
-
-  whatwg-url@11.0.0:
-    resolution: {integrity: sha512-RKT8HExMpoYx4igMiVMY83lN6UeITKJlBQ+vR/8ZJ8OCdSiN3RwCq+9gH0+Xzj0+5IrM6i4j/6LuvzbZIQgEcQ==}
     engines: {node: '>=12'}
 
   whatwg-url@13.0.0:
@@ -2430,20 +2352,6 @@ snapshots:
     dependencies:
       sparse-bitfield: 3.0.3
 
-  '@shelf/jest-mongodb@4.3.2(jest-environment-node@29.7.0)(mongodb@6.7.0(socks@2.8.3))':
-    dependencies:
-      debug: 4.3.4
-      jest-environment-node: 29.7.0
-      mongodb: 6.7.0(socks@2.8.3)
-      mongodb-memory-server: 9.2.0
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - supports-color
-
   '@sinclair/typebox@0.27.8': {}
 
   '@sinonjs/commons@2.0.0':
@@ -2521,11 +2429,6 @@ snapshots:
     dependencies:
       '@types/webidl-conversions': 7.0.3
 
-  '@types/whatwg-url@8.2.2':
-    dependencies:
-      '@types/node': 22.3.0
-      '@types/webidl-conversions': 7.0.3
-
   '@types/yargs-parser@21.0.3': {}
 
   '@types/yargs@17.0.33':
@@ -2573,10 +2476,6 @@ snapshots:
   array-flatten@1.1.1: {}
 
   asap@2.0.6: {}
-
-  async-mutex@0.4.1:
-    dependencies:
-      tslib: 2.6.3
 
   async-mutex@0.5.0:
     dependencies:
@@ -2690,8 +2589,6 @@ snapshots:
   bser@2.1.1:
     dependencies:
       node-int64: 0.4.0
-
-  bson@5.5.1: {}
 
   bson@6.8.0: {}
 
@@ -2845,10 +2742,6 @@ snapshots:
   debug@2.6.9:
     dependencies:
       ms: 2.0.0
-
-  debug@4.3.4:
-    dependencies:
-      ms: 2.1.2
 
   debug@4.3.6(supports-color@5.5.0):
     dependencies:
@@ -3158,6 +3051,7 @@ snapshots:
     dependencies:
       jsbn: 1.1.0
       sprintf-js: 1.1.3
+    optional: true
 
   ipaddr.js@1.9.1: {}
 
@@ -3339,10 +3233,6 @@ snapshots:
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
-  jest-express@1.12.0:
-    dependencies:
-      jest-node-http: 1.0.0
-
   jest-get-type@29.6.3: {}
 
   jest-haste-map@29.7.0:
@@ -3390,8 +3280,6 @@ snapshots:
       '@jest/types': 29.6.3
       '@types/node': 22.3.0
       jest-util: 29.7.0
-
-  jest-node-http@1.0.0: {}
 
   jest-pnp-resolver@1.2.3(jest-resolve@29.7.0):
     optionalDependencies:
@@ -3555,7 +3443,8 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsbn@1.1.0: {}
+  jsbn@1.1.0:
+    optional: true
 
   jsesc@2.5.2: {}
 
@@ -3641,11 +3530,6 @@ snapshots:
     dependencies:
       brace-expansion: 1.1.11
 
-  mongodb-connection-string-url@2.6.0:
-    dependencies:
-      '@types/whatwg-url': 8.2.2
-      whatwg-url: 11.0.0
-
   mongodb-connection-string-url@3.0.1:
     dependencies:
       '@types/whatwg-url': 11.0.5
@@ -3675,28 +3559,6 @@ snapshots:
       - socks
       - supports-color
 
-  mongodb-memory-server-core@9.2.0:
-    dependencies:
-      async-mutex: 0.4.1
-      camelcase: 6.3.0
-      debug: 4.3.6(supports-color@5.5.0)
-      find-cache-dir: 3.3.2
-      follow-redirects: 1.15.6(debug@4.3.6)
-      https-proxy-agent: 7.0.5
-      mongodb: 5.9.2
-      new-find-package-json: 2.0.0
-      semver: 7.6.3
-      tar-stream: 3.1.7
-      tslib: 2.6.3
-      yauzl: 3.1.3
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - supports-color
-
   mongodb-memory-server@10.0.0(socks@2.8.3):
     dependencies:
       mongodb-memory-server-core: 10.0.0(socks@2.8.3)
@@ -3710,26 +3572,6 @@ snapshots:
       - snappy
       - socks
       - supports-color
-
-  mongodb-memory-server@9.2.0:
-    dependencies:
-      mongodb-memory-server-core: 9.2.0
-      tslib: 2.6.3
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - supports-color
-
-  mongodb@5.9.2:
-    dependencies:
-      bson: 5.5.1
-      mongodb-connection-string-url: 2.6.0
-      socks: 2.8.3
-    optionalDependencies:
-      '@mongodb-js/saslprep': 1.1.8
 
   mongodb@6.7.0(socks@2.8.3):
     dependencies:
@@ -4049,12 +3891,14 @@ snapshots:
 
   slash@3.0.0: {}
 
-  smart-buffer@4.2.0: {}
+  smart-buffer@4.2.0:
+    optional: true
 
   socks@2.8.3:
     dependencies:
       ip-address: 9.0.5
       smart-buffer: 4.2.0
+    optional: true
 
   source-map-support@0.5.13:
     dependencies:
@@ -4069,7 +3913,8 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  sprintf-js@1.1.3: {}
+  sprintf-js@1.1.3:
+    optional: true
 
   stack-trace@0.0.10: {}
 
@@ -4201,10 +4046,6 @@ snapshots:
 
   touch@3.1.1: {}
 
-  tr46@3.0.0:
-    dependencies:
-      punycode: 2.3.1
-
   tr46@4.1.1:
     dependencies:
       punycode: 2.3.1
@@ -4255,11 +4096,6 @@ snapshots:
       makeerror: 1.0.12
 
   webidl-conversions@7.0.0: {}
-
-  whatwg-url@11.0.0:
-    dependencies:
-      tr46: 3.0.0
-      webidl-conversions: 7.0.0
 
   whatwg-url@13.0.0:
     dependencies:

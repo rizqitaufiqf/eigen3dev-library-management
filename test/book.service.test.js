@@ -13,6 +13,7 @@ beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();
   const uri = mongoServer.getUri();
   await mongoose.connect(uri);
+
   await Book.insertMany(initBooks);
   await Member.insertMany(initMembers);
 });
@@ -52,6 +53,22 @@ describe("Book Service", () => {
 
     await expect(BookService.borrowBook(member, "HOB-83")).rejects.toThrow(
       "Member cannot borrow more than 2 books."
+    );
+  });
+
+  it("should not allow a member to borrow if being penalize", async () => {
+    const memberCode = "M003";
+    const bookCode = "NRN-7";
+
+    // penalize member
+    const penalizeUntil = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)
+      .toLocaleDateString("en-GB")
+      .replace(/\//g, "-");
+    await MemberService.setPenalize(memberCode, penalizeUntil);
+
+    const member = await MemberService.findByCode(memberCode);
+    await expect(BookService.borrowBook(member, bookCode)).rejects.toThrow(
+      "Member is penalized and cannot borrow books."
     );
   });
 
