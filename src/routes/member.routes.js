@@ -105,4 +105,71 @@ router.get("/", memberController.findAll);
  */
 router.get("/:memberCode", memberController.findByCode);
 
+/**
+ * @swagger
+ * /members/{memberCode}/penalize:
+ *   post:
+ *     summary: Penalize a member
+ *     tags: [Members]
+ *     parameters:
+ *       - in: path
+ *         name: memberCode
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Member Code
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               penalizeUntil:
+ *                 type: string
+ *                 example: "20-09-2024"
+ *     responses:
+ *       200:
+ *         description: Member penalize successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Set penalty successfully."
+ *       400:
+ *         description: Bad Request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Invalid request body."
+ *       404:
+ *         description: Member Not Found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Member not found."
+ *       500:
+ *         description: Internal Server Error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: "Internal server error."
+ */
+router.post("/:memberCode/penalize", memberController.setPenalize);
+
 module.exports = router;
