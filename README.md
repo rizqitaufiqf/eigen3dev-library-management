@@ -45,7 +45,19 @@ To run this app, follow this steps:
    npm install
    ```
 
-4. Start server:
+4. Initiate Collection first:
+
+   ```bash
+   pnpm init-db
+   ```
+
+   if you use npm:
+
+   ```bash
+   npm run init-db
+   ```
+
+5. Start server:
 
    ```bash
    pnpm start
@@ -57,8 +69,8 @@ To run this app, follow this steps:
    npm run start
    ```
 
-5. You are good to go! open the http://localhost:3000/docs.
-6. If you want to run the server in development, you can use:
+6. You are good to go! open the http://localhost:3000/docs to open the API Docs.
+7. If you want to run the server in development, you can use:
 
    ```bash
    pnpm start:dev
@@ -70,7 +82,7 @@ To run this app, follow this steps:
    npm run start:dev
    ```
 
-7. If you want to test some service you can use:
+8. If you want to test some service you can use:
 
    ```bash
    pnpm test
