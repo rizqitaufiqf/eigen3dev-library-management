@@ -3,7 +3,11 @@ services:
     image: mongo:latest
     container_name: book-db
     environment:
-      MONGO_INITDB_ROOT_USERNAME: book
-      MONGO_INITDB_ROOT_PASSWORD: pass
+      - MONGO_INITDB_ROOT_USERNAME=book
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+      - TZ=Asia/Jakarta
     ports:
       - "27017:27017"
+    volumes:
+    - /etc/timezone:/etc/timezone:ro
+    - /etc/localtime:/etc/localtime:ro

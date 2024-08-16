@@ -18,6 +18,7 @@ class BookService {
       throw new Error("Member cannot borrow more than 2 books.");
 
     const now = new Date();
+    now.setHours(23, 59, 49, 999);
     if (member.penaltyUntil && member.penaltyUntil > now)
       throw new Error("Member is penalized and cannot borrow books.");
 
@@ -40,11 +41,16 @@ class BookService {
     }
 
     const now = new Date();
+    now.setHours(23, 59, 59, 999);
     const borrowedDate = new Date(book.borrowedDate);
+    borrowedDate.setHours(23, 59, 59, 999);
+
     const diffDays = (now - borrowedDate) / (1000 * 60 * 60 * 24);
 
     if (diffDays > 7) {
-      member.penaltyUntil = new Date(now.setDate(now.getDate() + 3));
+      const penaltyDate = new Date(now.setDate(now.getDate() + 3));
+      penaltyDate.setHours(23, 59, 59, 999);
+      member.penaltyUntil = penaltyDate;
     }
 
     member.borrowedBooks.pull(book);
