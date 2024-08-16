@@ -26,7 +26,6 @@ const BookSchema = new Schema(
       default: null,
     },
     borrowedDate: Date,
-    returnedDate: Date,
   },
   { timestamps: true }
 );
