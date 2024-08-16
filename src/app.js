@@ -2,7 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const logger = require("morgan");
+const morgan = require("morgan");
+const logger = require("./utils/logger");
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUiExpress = require("swagger-ui-express");
 
@@ -13,7 +14,13 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(logger("dev"));
+app.use(morgan("dev"));
+app.use((req, res, next) => {
+  logger.info(`Request: ${req.method} ${req.url}`);
+  logger.info(`Headers: ${JSON.stringify(req.headers)}`);
+  logger.info(`Body: ${JSON.stringify(req.body)}`);
+  next();
+});
 app.use(cookieParser());
 
 const swaggerOptions = {

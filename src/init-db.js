@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Book = require("./models/book.model");
 const Member = require("./models/member.model");
 const { initBooks, initMembers } = require("./utils/constants");
+const logger = require("./utils/logger");
 
 const initDB = async (uri = process.env.MONGO_URI) => {
   await mongoose.connect(uri);
@@ -14,7 +15,7 @@ const initDB = async (uri = process.env.MONGO_URI) => {
 };
 
 initDB().catch((err) => {
-  console.log("init Database error:", err);
+  logger.error("init Database error:", err);
 });
 
 module.exports = { initDB };
