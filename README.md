@@ -2,7 +2,7 @@
 
 ## 📜Contents
 
-- CCTV management app contents
+- Library management app contents
   - [🔍Stacks](#stacks)
   - [🛠️Installation](#️installation)
     - [🐳Docker](#docker)
