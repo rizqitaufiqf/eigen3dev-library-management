@@ -5,11 +5,17 @@ const MemberSchema = new Schema(
   {
     code: {
       type: String,
+      required: true,
       unique: true,
     },
-    name: String,
-    isPenalized: { type: Boolean, default: false },
-    penalizeUntil: Date,
+    name: {
+      type: String,
+      required: true,
+    },
+    penaltyUntil: {
+      type: Date,
+      default: null,
+    },
     borrowedBooks: [
       {
         type: mongoose.Schema.Types.ObjectId,
