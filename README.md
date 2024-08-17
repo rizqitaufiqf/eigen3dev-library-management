@@ -1,137 +1,40 @@
-# library-management
+# ALGORITMA
 
-## 📜Contents
+Kerjakan dengan menggunakan bahasa pemograman yg anda kuasai, buat folder terpisah untuk soal ini
 
-- Library Management app contents
-  - [🔍Stacks](#stacks)
-  - [🛠️Installation](#️installation)
-    - [🐳Docker](#docker)
-    - [🖥️Local Machine](#️-local-machine)
+1. Terdapat string "NEGIE1", silahkan reverse alphabet nya dengan angka tetap diakhir kata Hasil = "EIGEN1"
 
-## 🔍Stacks
+2. Diberikan contoh sebuah kalimat, silahkan cari kata terpanjang dari kalimat tersebut, jika ada kata dengan panjang yang sama silahkan ambil salah satu
 
-Application Stacks:
+Contoh:
 
-- ExpressJS
-- Node JS
-- Mongo DB
-- Mongoose ODM
-- Jest
-- Makefile
-- Docker
-- Docker Compose
+```
+const sentence = "Saya sangat senang mengerjakan soal algoritma"
 
-## 🛠️Installation
-
-### 🐳Docker
-
-To run this app (using Docker), follow this steps:
-
-1. Make sure you have Makefile, Docker and Docker Compose installed and configured on your system.
-2. Clone this repo and navigate to the project directory:
-
-```bash
-git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd eigen3dev-library-management
+longest(sentence)
+// mengerjakan: 11 character
 ```
 
-3. Create .env file called `.env` and fill the following:
+3. Terdapat dua buah array yaitu array INPUT dan array QUERY, silahkan tentukan berapa kali kata dalam QUERY terdapat pada array INPUT
 
-```env
-    PORT=3000
-    MONGO_URI=MONGO DB URL (ex: mongodb://book:pass@localhost:27017/)
+Contoh:
+
+```
+INPUT = ['xc', 'dz', 'bbb', 'dz']
+QUERY = ['bbb', 'ac', 'dz']
+
+OUTPUT = [1, 0, 2] karena kata 'bbb' terdapat 1 pada INPUT, kata 'ac' tidak ada pada INPUT, dan kata 'dz' terdapat 2 pada INPUT
 ```
 
-4. Open your terminal and run:
+4. Silahkan cari hasil dari pengurangan dari jumlah diagonal sebuah matrik NxN Contoh:
 
-```bash
-make fresh-start
+Contoh:
+
 ```
+Matrix = [[1, 2, 0], [4, 5, 6], [7, 8, 9]]
 
-if you want to make sure to see the logs from the server run:
+diagonal pertama = 1 + 5 + 9 = 15
+diagonal kedua = 0 + 5 + 7 = 12
 
-```bash
-make logs-web
-```
-
-Wait server's container connected to MongoDB container
-
-5. You are good to go! open the http://localhost:3000.
-
-### 🖥️ Local Machine
-
-To run this app on your Local Machine, follow this step:
-
-1. Make sure you have Makefile, Docker and Docker Compose installed and configured on your system.
-2. Clone this repo and navigate to the project directory:
-
-```bash
-git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd eigen3dev-library-management
-```
-
-3. Create .env file called `.env` and fill the following:
-
-```env
-    PORT=3000
-    MONGO_URI=MONGO DB URL (ex: mongodb://book:pass@localhost:27017/)
-```
-
-4. Open your terminal and run to install all dependencies:
-
-```bash
-pnpm i
-```
-
-if you use npm:
-
-```bash
-npm install
-```
-
-5. Initiate Collection first:
-
-```bash
-pnpm init-db
-```
-
-if you use npm:
-
-```bash
-npm run init-db
-```
-
-6. Start server:
-
-```bash
-pnpm start
-```
-
-if you use npm:
-
-```bash
-npm run start
-```
-
-7. You are good to go! open the http://localhost:3000/docs to open the API Docs.
-8. If you want to run the server in development, you can use:
-
-```bash
-pnpm start:dev
-```
-
-if you use npm:
-
-```bash
-npm run start:dev
-```
-
-9. If you want to test some service you can use:
-
-```bash
-pnpm test
-```
-
-if you use npm:
-
-```bash
-npm run test
+maka hasilnya adalah 15 - 12 = 3
 ```
