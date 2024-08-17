@@ -1,19 +1,19 @@
 require("dotenv").config();
 const app = require("./app");
-const mongoose = require("mongoose");
-const { normalizePort } = require("./utils");
-const logger = require("./utils/logger");
+const { normalizePort } = require("./infra/utils");
+const database = require("./infra/database");
+const logger = require("./infra/logger");
+const { initDB } = require("./infra/database/init-db");
 
 const PORT = normalizePort(process.env.PORT || 3000);
 
-mongoose
-  .connect(process.env.MONGO_URI)
+database(process.env.MONGO_URI)
   .then(() => {
-    logger.info("Connected to Database");
+    logger.info("Connected to Database.");
     app.listen(PORT, () => {
-      logger.info(`Server Listen on Port ${PORT}`);
+      logger.info(`Server listening on port ${PORT}.`);
     });
   })
   .catch((err) => {
-    logger.error("Error connecting to Database:", err);
+    logger.error("Error during startup:", err);
   });

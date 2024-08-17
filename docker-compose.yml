@@ -22,3 +22,13 @@ services:
       - .env
     depends_on:
       - mongo
+  initdb:
+    image: node:18
+    container_name: library-init-db
+    depends_on:
+      - mongo
+      - web
+    entrypoint: ["/bin/sh", "-c", "npm run init-db"]
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app

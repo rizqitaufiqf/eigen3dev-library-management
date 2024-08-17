@@ -8,6 +8,4 @@ RUN npm i
 
 COPY . .
 
-RUN npm run init-db
-
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start:dev"]

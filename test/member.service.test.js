@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const { MongoMemoryServer } = require("mongodb-memory-server");
-const MemberService = require("../src/services/member.service");
+const memberService = require("../src/domains/member/services/member.service");
 
-const Book = require("../src/models/book.model");
-const Member = require("../src/models/member.model");
-const { initBooks, initMembers } = require("../src/utils/constants");
+const Book = require("../src/domains/book/models/book.model");
+const Member = require("../src/domains/member/models/member.model");
+const { initBooks, initMembers } = require("../src/infra/utils/constants");
 
 let mongoServer;
 
@@ -24,13 +24,13 @@ afterAll(async () => {
 
 describe("Member Service", () => {
   it("should get all members", async () => {
-    const member = await MemberService.findAll();
+    const member = await memberService.findAll();
     expect(member[0]).toHaveProperty("code");
   });
 
   it("should get member by code", async () => {
     const memberCode = "M001";
-    const member = await MemberService.findByCode(memberCode);
+    const member = await memberService.findByCode(memberCode);
     expect(member).toHaveProperty("code", "M001");
   });
 
@@ -39,7 +39,7 @@ describe("Member Service", () => {
     const penalizeUntil = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000)
       .toLocaleDateString("en-GB")
       .replace(/\//g, "-");
-    const member = await MemberService.setPenalize(memberCode, penalizeUntil);
+    const member = await memberService.setPenalize(memberCode, penalizeUntil);
     expect(member.penaltyUntil).not.toEqual(null);
   });
 });

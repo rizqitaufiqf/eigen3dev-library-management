@@ -41,7 +41,7 @@ git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd
     MONGO_URI=MONGO DB URL (ex: mongodb://book:pass@localhost:27017/)
 ```
 
-4. Open your terminal and run:
+4. Open your terminal and run (will create Database, web service and Populate Collection into database):
 
 ```bash
 make fresh-start
@@ -87,19 +87,7 @@ if you use npm:
 npm install
 ```
 
-5. Initiate Collection first:
-
-```bash
-pnpm init-db
-```
-
-if you use npm:
-
-```bash
-npm run init-db
-```
-
-6. Start server:
+5. Start server:
 
 ```bash
 pnpm start
@@ -109,6 +97,18 @@ if you use npm:
 
 ```bash
 npm run start
+```
+
+6. Populate Collection (optional: if you doesn't have mock data on your Database):
+
+```bash
+pnpm init-db
+```
+
+if you use npm:
+
+```bash
+npm run init-db
 ```
 
 7. You are good to go! open the http://localhost:3000/docs to open the API Docs.
@@ -124,7 +124,7 @@ if you use npm:
 npm run start:dev
 ```
 
-9. If you want to test some service you can use:
+9. If you want to test some services you can use:
 
 ```bash
 pnpm test

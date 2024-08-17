@@ -13,6 +13,9 @@ logs-web:
 logs-db:
 	docker logs library-db -f
 
+prune:
+	docker system prune -af --volumes 
+
 fresh-start:
 	make down && \
 	make build && \
