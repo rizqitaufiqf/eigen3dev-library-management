@@ -31,7 +31,7 @@ To run this app (using Docker), follow this steps:
 2. Clone this repo and navigate to the project directory:
 
 ```bash
-git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd eigen3dev-library-management
+git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd eigen3dev-library-management/library-management
 ```
 
 3. Create .env file called `.env` and fill the following:
@@ -65,7 +65,7 @@ To run this app on your Local Machine, follow this step:
 2. Clone this repo and navigate to the project directory:
 
 ```bash
-git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd eigen3dev-library-management
+git clone https://github.com/rizqitaufiqf/eigen3dev-library-management.git && cd eigen3dev-library-management/library-management
 ```
 
 3. Create .env file called `.env` and fill the following:
